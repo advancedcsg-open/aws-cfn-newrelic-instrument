@@ -1,0 +1,61 @@
+{
+  "name": "aws-cfn-newrelic-instrument",
+  "version": "1.0.0",
+  "description": "AWS CFN New Relic Instrumentation",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "sam build --template-file template.cfn.yaml",
+    "coverage": "jest --coverage",
+    "test": "jest --silent"
+  },
+  "keywords": [
+    "aws",
+    "cloudformation",
+    "new relic"
+  ],
+  "author": "Paul Mowat",
+  "license": "MIT",
+  "dependencies": {
+    "set-value": "^4.0.0",
+    "node-fetch": "~2.6.1"
+  },
+  "devDependencies": {
+    "jest": "^27.1.0",
+    "js-yaml": "^4.1.0",
+    "standard": "^16.0.3",
+    "yaml-cfn": "^0.3.1",
+    "jest-fetch-mock": "3.0.3"
+  },
+  "files": [
+    "src/**/*.js"
+  ],
+  "jest": {
+    "automock": false,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!node_modules/**",
+      "!tests/**",
+      "!coverage/lcov-report/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "dist/**/*"
+    ]
+  }
+}

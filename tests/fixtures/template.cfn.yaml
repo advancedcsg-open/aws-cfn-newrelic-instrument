@@ -1,0 +1,98 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Example-Api
+  
+Globals:
+  Function:
+    Runtime: nodejs14.x
+    Timeout: 15
+    Tracing: Active
+    Layers:
+      - !Ref libs
+
+Parameters:
+  Environment:
+    Description: A unique identifier for the environment
+    Type: String
+    Default: "non-production"
+    AllowedValues:
+      - "non-production"
+      - "production"
+
+Resources:
+  ExampleApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: v1
+
+  # --Handler cats start --
+  catsList:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handlers/cats/index.list
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSXrayWriteOnlyAccess
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{workplaceRef}/cats
+            Method: get
+            RestApiId: !Ref ExampleApi
+
+  catsGet:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handlers/cats/index.get
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSXrayWriteOnlyAccess
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{workplaceRef}/cats/{id}
+            Method: get
+            RestApiId: !Ref ExampleApi
+ 
+  # --Handler cats end --
+
+  # --Handler dogs start --
+  dogsList:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handlers/dogs/index.list
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{workplaceRef}/dogs
+            Method: get
+            RestApiId: !Ref ExampleApi
+
+  dogsGet:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handlers/dogs/index.get
+      Layers:
+        - !Sub "arn:aws:lambda:${AWS::Region}:580247275435:layer:LambdaInsightsExtension:14"
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSXrayWriteOnlyAccess
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{workplaceRef}/dogs/{id}
+            Method: get
+            RestApiId: !Ref ExampleApi
+ 
+  # --Handler cats end --
+
+Outputs:
+  ExampleApi:
+    Description: "API Gateway endpoint URL for Example api"
+    Value:
+      Fn::Sub: https://${ExampleApi}.execute-api.${AWS::Region}.amazonaws.com/v1

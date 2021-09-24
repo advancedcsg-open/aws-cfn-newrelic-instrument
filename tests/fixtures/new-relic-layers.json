@@ -1,0 +1,174 @@
+{
+  "Layers": [
+      {
+          "LayerName": "NewRelicJava11",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicJava11",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicJava11:6",
+              "Version": 6,
+              "Description": "New Relic Layer for Java 11",
+              "CreatedDate": "2021-07-01T18:45:54.575+0000",
+              "CompatibleRuntimes": [
+                  "java11"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicJava8",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicJava8",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicJava8:5",
+              "Version": 5,
+              "Description": "New Relic Layer for java8.al2",
+              "CreatedDate": "2021-07-01T18:45:58.892+0000",
+              "CompatibleRuntimes": [
+                  "java8.al2"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicLambdaExtension",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicLambdaExtension",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicLambdaExtension:14",
+              "Version": 14,
+              "Description": "New Relic Lambda Extension Layer",
+              "CreatedDate": "2021-07-01T18:25:56.961+0000",
+              "CompatibleRuntimes": [
+                  "dotnetcore3.1",
+                  "provided",
+                  "provided.al2"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicNodeJS10X",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS10X",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS10X:53",
+              "Version": 53,
+              "Description": "New Relic Layer for Node.js 10.x",
+              "CreatedDate": "2021-08-26T00:53:59.153+0000",
+              "CompatibleRuntimes": [
+                  "nodejs10.x"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicNodeJS12X",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS12X",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS12X:51",
+              "Version": 51,
+              "Description": "New Relic Layer for Node.js 12.x",
+              "CreatedDate": "2021-08-26T00:53:06.729+0000",
+              "CompatibleRuntimes": [
+                  "nodejs12.x"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicNodeJS14X",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS14X",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS14X:21",
+              "Version": 21,
+              "Description": "New Relic Layer for Node.js 14.x",
+              "CreatedDate": "2021-08-26T00:53:04.207+0000",
+              "CompatibleRuntimes": [
+                  "nodejs14.x"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicNodeJS810",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS810",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicNodeJS810:46",
+              "Version": 46,
+              "Description": "New Relic Layer for Node.js 8.10",
+              "CreatedDate": "2021-06-21T18:50:14.404+0000",
+              "CompatibleRuntimes": [
+                  "nodejs8.10"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicPython27",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython27",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython27:51",
+              "Version": 51,
+              "Description": "New Relic Layer for Python 2.7",
+              "CreatedDate": "2021-08-24T22:49:50.108+0000",
+              "CompatibleRuntimes": [
+                  "python2.7"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicPython36",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython36",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython36:51",
+              "Version": 51,
+              "Description": "New Relic Layer for Python 3.6",
+              "CreatedDate": "2021-08-24T22:49:28.185+0000",
+              "CompatibleRuntimes": [
+                  "python3.6"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicPython37",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython37",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython37:52",
+              "Version": 52,
+              "Description": "New Relic Layer for Python 3.7",
+              "CreatedDate": "2021-08-24T22:49:22.209+0000",
+              "CompatibleRuntimes": [
+                  "python3.7"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicPython38",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython38",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython38:48",
+              "Version": 48,
+              "Description": "New Relic Layer for Python 3.8",
+              "CreatedDate": "2021-08-24T22:49:42.828+0000",
+              "CompatibleRuntimes": [
+                  "python3.8"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      },
+      {
+          "LayerName": "NewRelicPython39",
+          "LayerArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython39",
+          "LatestMatchingVersion": {
+              "LayerVersionArn": "arn:aws:lambda:eu-west-2:451483290750:layer:NewRelicPython39:1",
+              "Version": 1,
+              "Description": "New Relic Layer for Python 3.9",
+              "CreatedDate": "2021-09-01T19:48:14.023+0000",
+              "CompatibleRuntimes": [
+                  "python3.9"
+              ],
+              "LicenseInfo": "Apache-2.0"
+          }
+      }
+  ]
+}

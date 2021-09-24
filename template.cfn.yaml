@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS CFN New Relic Instrumentation
+
+Parameters:
+  NewRelicAccountId:
+    Description: New Relic Account Id
+    Type: String
+  NewRelicTrustedAccountId:
+    Description: New Relic Trusted Account Id
+    Type: String
+
+Globals:
+  Function:
+    Runtime: nodejs14.x
+    MemorySize: 128
+    Timeout: 15
+    Tracing: Active
+
+Resources:
+  NewRelicInstrumentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: CFN Macro function to automatically add New Relic instrumentation
+      Handler: src/index.handler
+      Environment:
+        Variables:
+          NEW_RELIC_ACCOUNT_ID: !Ref NewRelicAccountId
+          NEW_RELIC_TRUSTED_ACCOUNT_ID: !Ref NewRelicTrustedAccountId
+          NEW_RELIC_LICENSE_SECRET_ARN: !ImportValue NewRelicLicenseKeySecret-NewRelic-LicenseKeySecretARN
+
+  NewRelicLambdaInstrumentMacro:
+    Type: AWS::CloudFormation::Macro
+    Properties:
+      Name: NewRelicLambdaInstrumentation
+      Description: New Relic Lambda Instrumentation
+      FunctionName:
+        Ref: NewRelicInstrumentFunction
