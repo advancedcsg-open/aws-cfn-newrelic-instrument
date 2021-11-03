@@ -70,4 +70,9 @@ module.exports.handler = async (event) => {
       })
     }
   }
+  return {
+    requestId: event.requestId,
+    status: 'success',
+    fragment: event.fragment
+  }
 }
